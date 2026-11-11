@@ -8,3 +8,11 @@
 <!-- 561-group-standards:badges:end -->
 
 JavaScript type category — types as objects, functions as morphisms (a multicategory of types, domain is a tuple), and assignability as the carrier relation. Pure structure and operation; closures and section reads live in the javascript-topology package.
+
+Use `jsFn` to describe a function by its ordered domain and optional codomain.
+`composeAt(outer, slot, inner)` replaces the input at the zero-based integer
+`slot` with the inner function's domain when its codomain matches that input
+type by name. The composed function keeps the outer codomain.
+
+Run `npm test` to exercise the public package export. The suite covers type
+identity, slot composition, and direct assignability.

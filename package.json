@@ -11,8 +11,8 @@
     "node": ">=22.18"
   },
   "scripts": {
-    "test": "run-package-tests",
-    "check": "check-package-syntax"
+    "test": "node --test src/*.test.mjs",
+    "check": "node --check src/algebra.test.mjs && node --check src/catalog.mjs && node --check src/index.mjs && node --check src/morphism.mjs && node --check src/type.mjs"
   },
   "main": "./src/index.mjs",
   "files": [
@@ -26,9 +26,6 @@
     "./package.json": "./package.json"
   },
   "sideEffects": false,
-  "devDependencies": {
-    "@red-cup-engineering/jsnode-package-services-section": "0.2.4"
-  },
   "license": "MIT",
   "funding": {
     "type": "individual",

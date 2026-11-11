@@ -11,7 +11,7 @@ import {
   findType,
   hasType,
   directlyAssignable,
-} from "./index.mjs";
+} from "@red-cup-engineering/javascript-algebra";
 
 describe("jsType", () => {
   it("constructs a frozen object with a kind, defaulting to type-alias", () => {
@@ -53,6 +53,11 @@ describe("operadic composition", () => {
     const h = composeAt(outer, 1, inner);
     assert.deepEqual(h.domain, ["A", "X", "Y"]);
     assert.equal(h.codomain, "Z");
+  });
+  it("rejects a string in place of an integer slot index", () => {
+    const withTail = jsFn({ name: "f", domain: ["A", "B", "C"], codomain: "Z" });
+    assert.equal(composableAt(withTail, "1", inner), false);
+    assert.throws(() => composeAt(withTail, "1", inner), TypeError);
   });
   it("composeAt refuses a non-composable slot", () => {
     assert.throws(() => composeAt(outer, 0, inner), TypeError);

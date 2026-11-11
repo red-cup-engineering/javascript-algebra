@@ -8,9 +8,7 @@
 // another. Domain and codomain are type *names*; resolution against a catalog
 // of objects is the catalog's concern, closures are the topology's.
 
-export function jsFn(input
-
-) {
+export function jsFn(input) {
   if (!input.name) throw new TypeError("jsFn: name is required");
   const domain = Object.freeze([...(input.domain ?? [])]);
   return Object.freeze(
@@ -26,6 +24,7 @@ export function jsFn(input
 export function composableAt(outer, slot, inner) {
   return (
     inner.codomain !== undefined &&
+    Number.isInteger(slot) &&
     slot >= 0 &&
     slot < outer.domain.length &&
     outer.domain[slot] === inner.codomain
