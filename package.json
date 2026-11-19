@@ -1,0 +1,33 @@
+{
+  "name": "@red-cup-engineering/javascript-algebra",
+  "version": "0.1.6-dev.0",
+  "type": "module",
+  "description": "JavaScript type category — types as objects, functions as morphisms (a multicategory of types, domain is a tuple), and assignability as the carrier relation. Pure structure and operation; closures and section reads live in the javascript-topology package.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/javascript-algebra.git"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "check": "node --check src/catalog.mjs && node --check src/index.mjs && node --check src/morphism.mjs && node --check src/type.mjs"
+  },
+  "main": "./src/index.mjs",
+  "files": [
+    "src",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "license": "MIT",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
+  }
+}
